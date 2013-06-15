@@ -15,3 +15,8 @@ Code for http://www.synaptian.com/blog/
 * rails generate devise User
 * rake db:migrate
 * rails generate scaffold Payment stripe_token:string amount:float user:references
+* emacs Gemfile
+* bundle install
+* emacs config/initializers/stripe.rb
+* emacs app/views/layouts/application.html.erb
+* STRIPE_SECRET_KEY=sk_test_&hellip; rails s
