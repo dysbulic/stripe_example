@@ -14,3 +14,4 @@ Code for http://www.synaptian.com/blog/
 * emacs app/views/layouts/application.html.erb
 * rails generate devise User
 * rake db:migrate
+* rails generate scaffold Payment stripe_token:string amount:float user:references

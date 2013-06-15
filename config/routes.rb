@@ -1,4 +1,6 @@
 StripeExample::Application.routes.draw do
+  resources :payments
+
   devise_for :users
 
   # The priority is based upon order of creation:
