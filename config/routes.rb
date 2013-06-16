@@ -2,7 +2,7 @@ StripeExample::Application.routes.draw do
   resources :payments
 
   devise_for :users
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -52,7 +52,7 @@ StripeExample::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'payments#index'
 
   # See how all your routes lay out with "rake routes"
 

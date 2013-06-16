@@ -40,6 +40,7 @@ class PaymentsController < ApplicationController
   # POST /payments
   # POST /payments.json
   def create
+    params[:payment][:user] = nil if params[:payment][:user] == ""
     @payment = Payment.new(params[:payment])
 
     respond_to do |format|

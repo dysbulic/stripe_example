@@ -20,3 +20,6 @@ Code for http://www.synaptian.com/blog/
 * emacs config/initializers/stripe.rb
 * emacs app/views/layouts/application.html.erb
 * STRIPE_SECRET_KEY=sk_test_&hellip; rails s
+* emacs config/routes.rb
+* git rm public/index.html
+* emacs app/controllers/payments_controller.rb
