@@ -29,9 +29,7 @@ Code for http://www.synaptian.com/blog/
 * emacs app/controllers/payments_controller.rb
 * rails g migration add_stripe_customer_token_to_users stripe_customer_token:string
 * rake db:migrate
-
-# Debugging
-
+* *Debugging&hellip;*
 * heroku apps:create synaptian-stripe-example
 * git push heroku master
 * heroku run rake --trace db:migrate
