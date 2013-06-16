@@ -12,16 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :stripe_token %><br />
-    <%= f.text_field :stripe_token %>
+    <%= f.hidden_field :stripe_token %>
+  </div>
+  <div class="field">
+    <label>Card number</label>
+    <input id="card-number" type="text" placeholder="4242 4242 4242 4242" />
+  </div>
+  <div class="field">
+    <label>CV Code</label>
+    <input id="cvc" type="text" placeholder="123" />
+  </div>
+  <div class="field">
+    <label>Expiry Month</label>
+    <input id="exp-month" type="text" placeholder="02" />
+  </div>
+  <div class="field">
+    <label>Expiry Year</label>
+    <input id="exp-year" type="text" placeholder="15" />
   </div>
   <div class="field">
     <%= f.label :amount %><br />
     <%= f.text_field :amount %>
-  </div>
-  <div class="field">
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
   </div>
   <div class="actions">
     <%= f.submit %>

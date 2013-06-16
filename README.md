@@ -23,3 +23,7 @@ Code for http://www.synaptian.com/blog/
 * emacs config/routes.rb
 * git rm public/index.html
 * emacs app/controllers/payments_controller.rb
+* emacs app/views/payments/_form.html.erb
+* git mv app/assets/javascripts/payments.js.coffee app/assets/javascripts/payments.js
+* emacs app/assets/javascripts/payments.js
+* emacs app/controllers/payments_controller.rb

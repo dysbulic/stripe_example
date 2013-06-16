@@ -41,6 +41,31 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     params[:payment][:user] = nil if params[:payment][:user] == ""
+
+    charge_info = {
+      amount:      (params[:payment][:amount].to_f * 100).to_i,
+      description: 'Stripe Example Charge',
+      currency:    'usd'
+    }
+
+    if current_user
+      if current_user.stripe_customer_token
+        customer = Stripe::Customer.retrieve(current_user.stripe_customer_token)
+      else
+        customer = Stripe::Customer.create(
+            :email => current_user.email,
+            :card  => params[:payment][:stripe_token]
+        )
+        current_user.update_attribute(:stripe_customer_token, customer.id)
+      end
+      
+      charge = Stripe::Charge.create( charge_info.merge({ customer: customer.id }) )
+
+      params[:payment][:user] = current_user
+    else
+      charge = Stripe::Charge.create( charge_info.merge({ card: params[:payment][:stripe_token] }) )
+    end
+    params[:payment][:stripe_token] = charge.id
     @payment = Payment.new(params[:payment])
 
     respond_to do |format|
