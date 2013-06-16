@@ -56,6 +56,11 @@ class PaymentsController < ApplicationController
     if current_user
       if current_user.stripe_customer_token
         customer = Stripe::Customer.retrieve(current_user.stripe_customer_token)
+
+        if params[:saved_card] == 'false'
+          customer.card = params[:payment][:stripe_token]
+          customer.save
+        end
       else
         customer = Stripe::Customer.create(
             :email => current_user.email,
