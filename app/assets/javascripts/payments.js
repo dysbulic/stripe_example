@@ -1,4 +1,6 @@
 $( function() {
+    $('#card-number').payment('formatCardNumber')
+
     $(document).on('click', "#new_payment [name='commit']", function( event ) {
 	event.preventDefault()
         var card = {

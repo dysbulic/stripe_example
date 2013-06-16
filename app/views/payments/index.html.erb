@@ -1,4 +1,5 @@
 <%= link_to('Login', main_app.new_user_session_path) unless current_user %>
+<%= link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user %>
 
 <h1>Listing payments</h1>
 

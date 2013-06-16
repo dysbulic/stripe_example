@@ -12,7 +12,7 @@
 
 <p>
   <b>User:</b>
-  <%= @payment.user.email %>
+  <%= @payment.user.email if @payment.user %>
 </p>
 
 
