@@ -33,3 +33,6 @@ Code for http://www.synaptian.com/blog/
 # Debugging
 
 * heroku apps:create synaptian-stripe-example
+* git push heroku master
+* heroku run rake --trace db:migrate
+* heroku config:set STRIPE_SECRET_KEY=sk_test_&hellip;
