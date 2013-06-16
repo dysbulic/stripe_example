@@ -1,7 +1,22 @@
-stripe_example
+Stripe Example
 ==============
 
-Code for http://www.synaptian.com/blog/
+Simple example to show both anonymous and saved card tranactions in Stripe.
+
+More information at http://www.synaptian.com/blog/
+
+# Quick Start
+
+* git clone git://github.com/wholcomb/stripe_example.git
+* cd stripe_example
+* heroku apps:create
+* git push heroku master
+* heroku run rake --trace db:migrate
+* *Sign up for [Stripe](http://stripe.com)*
+* heroku config:set STRIPE_SECRET_KEY=sk_test_&hellip;
+* heroku config:set STRIPE_PUBLISHABLE_KEY=pk_test_&hellip;
+
+## Commands used to create this application
 
 * rails new .
 * emacs Gemfile
