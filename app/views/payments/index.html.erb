@@ -1,5 +1,10 @@
-<%= link_to('Login', main_app.new_user_session_path) unless current_user %>
-<%= link_to('Logout', main_app.destroy_user_session_path, :method => :delete) if current_user %>
+<%- if current_user %>
+  <p>Logged in as: <%= current_user.email %>
+  <%= link_to('Logout', main_app.destroy_user_session_path, :method => :delete) %>
+<%- else %>
+  <%= link_to('Login', main_app.new_user_session_path) unless current_user %>
+<%- end %>
+
 
 <h1>Listing payments</h1>
 

@@ -26,6 +26,11 @@ class PaymentsController < ApplicationController
   def new
     @payment = Payment.new
 
+    if current_user and current_user.stripe_customer_token
+      customer = Stripe::Customer.retrieve(current_user.stripe_customer_token)
+      @cc_last_4 = customer.active_card.last4
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @payment }
