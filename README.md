@@ -27,3 +27,5 @@ Code for http://www.synaptian.com/blog/
 * git mv app/assets/javascripts/payments.js.coffee app/assets/javascripts/payments.js
 * emacs app/assets/javascripts/payments.js
 * emacs app/controllers/payments_controller.rb
+* rails g migration add_stripe_customer_token_to_users stripe_customer_token:string
+* rake db:migrate

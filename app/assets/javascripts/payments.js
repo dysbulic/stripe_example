@@ -1,5 +1,5 @@
 $( function() {
-    $(document).on('click', "[name='commit']", function( event ) {
+    $(document).on('click', "#new_payment [name='commit']", function( event ) {
 	event.preventDefault()
         var card = {
             number:   $("#card-number").val(),
