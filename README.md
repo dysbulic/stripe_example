@@ -1,9 +1,11 @@
 Stripe Example
 ==============
 
-Simple example to show both anonymous and saved card tranactions in Stripe.
+Simple example to show both anonymous and saved card transactions in Stripe.
 
 More information at http://www.synaptian.com/blog/
+
+Sample application at http://synaptian-stripe-example.herokuapp.com
 
 # Quick Start
 
