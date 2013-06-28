@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Stripe example by wholcomb</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/wholcomb/stripe_example">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/wholcomb/stripe_example/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/wholcomb/stripe_example/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Stripe example</h1>
+          <p>Code for http://www.synaptian.com/blog/</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/wholcomb">wholcomb</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="stripe-example" class="anchor" href="#stripe-example"><span class="octicon octicon-link"></span></a>Stripe Example</h1>
+
+<p>Simple example to show both anonymous and saved card transactions in Stripe.</p>
+
+<p>More information at <a href="http://www.synaptian.com/blog/">http://www.synaptian.com/blog/</a></p>
+
+<p>Sample application at <a href="http://synaptian-stripe-example.herokuapp.com">http://synaptian-stripe-example.herokuapp.com</a></p>
+
+<h1>
+<a name="quick-start" class="anchor" href="#quick-start"><span class="octicon octicon-link"></span></a>Quick Start</h1>
+
+<ul>
+<li>git clone git://github.com/wholcomb/stripe_example.git</li>
+<li>cd stripe_example</li>
+<li>heroku apps:create</li>
+<li>git push heroku master</li>
+<li>heroku run rake --trace db:migrate</li>
+<li><em>Sign up for <a href="http://stripe.com">Stripe</a></em></li>
+<li>heroku config:set STRIPE_SECRET_KEY=sk_test_…</li>
+<li>heroku config:set STRIPE_PUBLISHABLE_KEY=pk_test_…</li>
+</ul><h2>
+<a name="commands-used-to-create-this-application" class="anchor" href="#commands-used-to-create-this-application"><span class="octicon octicon-link"></span></a>Commands used to create this application</h2>
+
+<ul>
+<li>rails new .</li>
+<li>emacs Gemfile</li>
+<li>bundle install</li>
+<li>emacs config/database.yml</li>
+<li>rake db:create db:migrate</li>
+<li>emacs Gemfile</li>
+<li>bundle install</li>
+<li>rails generate devise:install</li>
+<li>emacs app/views/layouts/application.html.erb</li>
+<li>rails generate devise User</li>
+<li>rake db:migrate</li>
+<li>rails generate scaffold Payment stripe_token:string amount:float user:references</li>
+<li>emacs Gemfile</li>
+<li>bundle install</li>
+<li>emacs config/initializers/stripe.rb</li>
+<li>emacs app/views/layouts/application.html.erb</li>
+<li>STRIPE_SECRET_KEY=sk_test_… rails s</li>
+<li>emacs config/routes.rb</li>
+<li>git rm public/index.html</li>
+<li>emacs app/controllers/payments_controller.rb</li>
+<li>emacs app/views/payments/_form.html.erb</li>
+<li>git mv app/assets/javascripts/payments.js.coffee app/assets/javascripts/payments.js</li>
+<li>emacs app/assets/javascripts/payments.js</li>
+<li>emacs app/controllers/payments_controller.rb</li>
+<li>rails g migration add_stripe_customer_token_to_users stripe_customer_token:string</li>
+<li>rake db:migrate</li>
+<li><em>Debugging…</em></li>
+<li>heroku apps:create synaptian-stripe-example</li>
+<li>git push heroku master</li>
+<li>heroku run rake --trace db:migrate</li>
+<li>heroku config:set STRIPE_SECRET_KEY=sk_test_…</li>
+</ul><h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>Copyright 2013 <a href="mailto:wholcomb@synaptian.com">Will Holcomb</a></p>
+
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
+
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-42087393-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
