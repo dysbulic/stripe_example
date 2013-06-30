@@ -21,7 +21,7 @@
 <% @payments.each do |payment| %>
   <tr>
     <td><%= payment.stripe_token %></td>
-    <td><%= payment.amount %></td>
+    <td><%= number_to_currency payment.amount %></td>
     <td><%= payment.user.email if payment.user %></td>
     <td><%= link_to 'Show', payment %></td>
     <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
