@@ -18,6 +18,13 @@ Sample application at http://synaptian-stripe-example.herokuapp.com
 * heroku config:set STRIPE_SECRET_KEY=sk_test_&hellip;
 * heroku config:set STRIPE_PUBLISHABLE_KEY=pk_test_&hellip;
 
+## Important Files
+
+* [Stripe Initializer](config/initializers/stripe.rb)
+* [Application Layout](app/views/layouts/application.html.erb)
+* [Payments Controller](app/controllers/payments_controller.rb)
+* [Credit Card Form](app/views/payments/_form.html.erb)
+
 ## Commands used to create this application
 
 * rails new .
