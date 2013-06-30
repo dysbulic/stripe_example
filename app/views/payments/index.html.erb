@@ -13,6 +13,7 @@
     <th>Stripe token</th>
     <th>Amount</th>
     <th>User</th>
+    <th>Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,6 +24,7 @@
     <td><%= payment.stripe_token %></td>
     <td><%= number_to_currency payment.amount %></td>
     <td><%= payment.user.email if payment.user %></td>
+    <td><%= payment.created_at %></td>
     <td><%= link_to 'Show', payment %></td>
     <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
     <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
