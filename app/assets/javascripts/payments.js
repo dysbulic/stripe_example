@@ -1,7 +1,7 @@
 $( function() {
     $('#card-number').payment('formatCardNumber')
     $('#cvc').payment('formatCardCVC')
-    $('#exp-month, #exp-year, [name="payment[amount]"]').payment('restrictNumeric')
+    $('#exp-month, #exp-year').payment('restrictNumeric')
 
     $(document).on('click', "#new_payment [name='commit']", function( event ) {
         if( $('input[name=saved_card]:checked').val() !== 'true' ) {
